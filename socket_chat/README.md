@@ -107,7 +107,6 @@ socket_chat/
 │   └── client/             # Entry point for the command-line client.
 ├── internal/
 │   └── server/             # Core application code: hub, client mgmt, server logic.
-├── pkg/                    # (Empty) For reusable libraries, if any were needed.
 ├── .golangci.yml           # Linter configuration.
 ├── go.mod                  # Go module definition.
 └── go.sum                  # Dependency checksums.
