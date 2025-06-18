@@ -1,0 +1,12 @@
+{
+    "name": "gopher-v2-demo",
+    "version": "1.0.0",
+    "description": "Frontend build for Gopher v2.0 Demo",
+    "scripts": {
+        "build": "tailwindcss -i ./web/assets/input.css -o ./static/output.css --minify"
+    },
+    "author": "dunamismax",
+    "devDependencies": {
+        "tailwindcss": "^3.4.4"
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }}</title>
+    <link href="/static/output.css" rel="stylesheet" />
+    <script src="/static/alpine.v3.min.js" defer></script>
+  </head>
+  <body class="bg-gray-900 text-gray-100 font-sans antialiased">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+      <!-- Header -->
+      <header class="text-center mb-8">
+        <h1 class="text-5xl font-bold text-cyan-400">{{ .Message }}</h1>
+        <p class="text-gray-400 mt-2">
+          A demonstration of the Gopher v2.0 Stack.
+        </p>
+      </header>
+
+      <!-- Main Interactive Content -->
+      <main
+        class="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-6 space-y-6"
+      >
+        <!-- Alpine Component 1: Counter -->
+        <div
+          x-data="{ count: 0 }"
+          class="text-center p-4 bg-gray-700 rounded-lg"
+        >
+          <h2 class="font-semibold text-lg text-white mb-2">Simple Counter</h2>
+          <div class="flex items-center justify-center space-x-4">
+            <button
+              @click="count--"
+              class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-md font-bold transition-colors"
+            >
+              -
+            </button>
+            <span
+              x-text="count"
+              class="text-2xl font-mono w-12 text-center text-cyan-400"
+            ></span>
+            <button
+              @click="count++"
+              class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-md font-bold transition-colors"
+            >
+              +
+            </button>
+          </div>
+        </div>
+
+        <!-- Alpine Component 2: Toggle Visibility -->
+        <div x-data="{ open: false }" class="p-4 bg-gray-700 rounded-lg">
+          <button
+            @click="open = !open"
+            class="w-full text-left font-semibold text-lg text-white focus:outline-none"
+          >
+            <span x-text="open ? 'Hide Details' : 'Show Details'"
+              >Show Details</span
+            >
+          </button>
+          <div
+            x-show="open"
+            x-transition
+            class="mt-4 text-gray-300 border-t border-gray-600 pt-4"
+          >
+            <p>
+              This section is rendered dynamically by Alpine.js. The Go backend
+              served the initial HTML, and Alpine brings it to life in the
+              browser.
+            </p>
+            <ul class="list-disc list-inside mt-2 space-y-1">
+              <li>
+                Backend: <span class="font-semibold text-cyan-400">Go</span>
+              </li>
+              <li>
+                Styling:
+                <span class="font-semibold text-cyan-400">Tailwind CSS</span>
+              </li>
+              <li>
+                Interactivity:
+                <span class="font-semibold text-cyan-400">Alpine.js</span>
+              </li>
+              <li>
+                Deployment:
+                <span class="font-semibold text-cyan-400">Single Binary</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="text-center mt-8 text-gray-500 text-sm">
+        <p>Copyright (c) 2025-present dunamismax. All rights reserved.</p>
+        <p>Gopher v2.0 Demo - Version 1.0.0</p>
+      </footer>
+    </div>
+  </body>
+</html>
