@@ -7,6 +7,6 @@
     },
     "author": "dunamismax",
     "devDependencies": {
-        "tailwindcss": "^3.4.4"
+        "tailwindcss": "^4.1.10"
     }
 }
