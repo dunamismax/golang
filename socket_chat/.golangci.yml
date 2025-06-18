@@ -1,0 +1,49 @@
+# Copyright (c) 2025-present dunamismax. All rights reserved.
+#
+# filename: .golangci.yml
+# author: dunamismax
+# version: 1.0.0
+# date: 17-06-2025
+# github: <https://github.com/dunamismax>
+# description: Configuration for the golangci-lint linter.
+
+run:
+  timeout: 5m
+  # The default concurrency (GOMAXPROCS) is used if not specified.
+  # We can set it to 4 for consistency.
+  concurrency: 4
+
+linters-settings:
+  govet:
+    check-shadowing: true
+  gocyclo:
+    min-complexity: 15
+  maligned:
+    suggest-new: true
+  goconst:
+    min-len: 2
+    min-occurrences: 3
+
+linters:
+  disable-all: true
+  enable:
+    - gofmt
+    - goimports
+    - revive
+    - govet
+    - staticcheck
+    - unused
+    - errcheck
+    - goconst
+    - gocyclo
+    - ineffassign
+    - typecheck
+    - wastedassign
+
+issues:
+  exclude-rules:
+    # Exclude complaining about `context.Context` from function signatures.
+    - path: _test\.go
+      linters:
+        - gocyclo
+        - errcheck
