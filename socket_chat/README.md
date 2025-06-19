@@ -1,10 +1,6 @@
 <h1 align="center">socket_chat</h1>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/egonelbre/gophers/master/.thumb/animation/2bit-sprite/demo.gif" alt="Go Gopher Running GIF">
-</p>
-
-<p align="center">
   socket_chat is a lightweight, concurrent, and scalable TCP-based chat server and client, built with pure Go.
   <br />
   It demonstrates idiomatic, concurrent Go using goroutines and channels, without external frameworks.
@@ -140,7 +136,3 @@ Connect with the author, **dunamismax**, on:
 ## 📜 License
 
 This project is licensed under the **MIT License**. See the `LICENSE` file for details.
-
-<p align="center">
-  <img src="https.raw.githubusercontent.com/egonelbre/gophers/master/.thumb/animation/gopher-dance-long-3x.gif" alt="Go Gopher Dancing GIF">
-</p>
