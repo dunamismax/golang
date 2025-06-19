@@ -1,4 +1,4 @@
-<h1 align="center">go_api_demo (v2)</h1>
+<h1 align="center">go_api_demo</h1>
 
 <p align="center">
   The ultimate single-file demonstration of a production-ready, idiomatic HTTP API server built with pure Go.
@@ -34,14 +34,27 @@
 
 You will need the Go toolchain installed (version 1.22+ recommended).
 
-### 1. Set Up The Project
+### 1. Clone the Repository
 
-Navigate to the project's root directory (`go_api_demo/`), then initialize the Go module and fetch the required dependency.
+First, clone the `dunamismax/golang` repository to your local machine.
 
 ```sh
-# Navigate to your project folder
-cd go_api_demo
+git clone https://github.com/dunamismax/golang.git
+```
 
+### 2. Navigate to the Project Directory
+
+All subsequent commands must be run from within the `go_api_demo` project folder.
+
+```sh
+cd golang/api/go_api_demo
+```
+
+### 3. Set Up The Go Module
+
+Initialize the directory as a Go module and fetch the required dependencies.
+
+```sh
 # Initialize the module
 go mod init go_api_demo
 
@@ -52,9 +65,9 @@ go get github.com/go-playground/validator/v10
 go mod tidy
 ```
 
-### 2. Run the Server
+### 4. Run the Server
 
-Run the application from the project's root directory. By default, it will listen on port `8080`.
+Now you can run the application. By default, it will listen on port `8080`.
 
 ```sh
 go run main.go
@@ -319,6 +332,23 @@ curl http://localhost:8080/api/v1/users/$BOB_ID
 ### Step 11: Graceful Shutdown
 
 To stop the server, return to the terminal where it's running and press `Ctrl+C`. You will see shutdown logs as the server gracefully terminates.
+
+---
+
+## 🏗️ Project Structure
+
+This project lives inside the larger `dunamismax/golang` repository. The structure provides context for the navigation commands in the "Getting Started" section.
+
+```sh
+golang/                 # Repository Root
+└── api/
+    └── go_api_demo/    <-- You are here. This is the Go module root.
+        ├── main.go
+        ├── go.mod
+        └── go.sum
+```
+
+This single-file structure within the `go_api_demo` directory is intentional, designed to present a clear, focused, and easily digestible example of an idiomatic Go service.
 
 ---
 
